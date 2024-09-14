@@ -24,8 +24,6 @@ class Solution:
             return "list can not blank"
         max = 0
         for index in range(len(numbers)):
-            if max == 0:
-                max = numbers[index]
-            if numbers[index] > max:
+            if max == 0 or numbers[index] > max:
                 max = numbers[index]   
         return max
