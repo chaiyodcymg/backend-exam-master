@@ -1,0 +1,925 @@
+{
+	"info": {
+		"_postman_id": "bc3e9530-d937-4b21-9006-66b757f5f175",
+		"name": "backend-exam-master",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "17716024",
+		"_collection_link": "https://grey-shadow-803742.postman.co/workspace/Pac_API~e1f10a34-a39f-45c7-8959-9a9783245e6a/collection/17716024-bc3e9530-d937-4b21-9006-66b757f5f175?action=share&source=collection_link&creator=17716024"
+	},
+	"item": [
+		{
+			"name": "schools",
+			"item": [
+				{
+					"name": "school_all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/school/?format=json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"school",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "school_filter",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "csrftoken=encuIW6MSoJ053GdG90sBOqDiTbR3qgM",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46YWRtaW4=",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/school/?format=json&name=Suan Kulab Wittaya School",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"school",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								},
+								{
+									"key": "name",
+									"value": "Suan Kulab Wittaya School"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add school",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "csrftoken=encuIW6MSoJ053GdG90sBOqDiTbR3qgM",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46YWRtaW4=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Suan Kulab Wittaya School\",\n    \"name_shortness\": \"SKW\",\n    \"address\": \"12 Rama VI Road, Phaya Thai, Bangkok 10400\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/school/?format=json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"school",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit school",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "csrftoken=encuIW6MSoJ053GdG90sBOqDiTbR3qgM",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46YWRtaW4=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Triam Udom Suksa School\",\n    \"name_shortness\": \"TUS\",\n    \"address\": \"80 Phaya Thai Road, Pathum Wan, Pathum Wan, Bangkok 10330\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/school/1/?format=json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"school",
+								"1",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete school",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "csrftoken=encuIW6MSoJ053GdG90sBOqDiTbR3qgM",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46YWRtaW4=",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/school/1/?format=json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"school",
+								"1",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "classrooms",
+			"item": [
+				{
+					"name": "classroom_all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "csrftoken=encuIW6MSoJ053GdG90sBOqDiTbR3qgM",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46YWRtaW4=",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/classroom/?format=json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"classroom",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "classroom_filter",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "csrftoken=encuIW6MSoJ053GdG90sBOqDiTbR3qgM",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46YWRtaW4=",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/classroom/?format=json&school=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"classroom",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								},
+								{
+									"key": "school",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add classroom",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "csrftoken=encuIW6MSoJ053GdG90sBOqDiTbR3qgM",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46YWRtaW4=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"grade\": 5,\n    \"section\": 7,\n    \"school_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/classroom/?format=json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"classroom",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit classroom",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "csrftoken=encuIW6MSoJ053GdG90sBOqDiTbR3qgM",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46YWRtaW4=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"grade\": 5,\n    \"section\": 5,\n    \"school_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/classroom/2/?format=json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"classroom",
+								"2",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete classroom",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "csrftoken=encuIW6MSoJ053GdG90sBOqDiTbR3qgM",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46YWRtaW4=",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/classroom/1/?format=json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"classroom",
+								"1",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "teachers",
+			"item": [
+				{
+					"name": "teacher_all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "csrftoken=encuIW6MSoJ053GdG90sBOqDiTbR3qgM",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46YWRtaW4=",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/teacher/?format=json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"teacher",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "teacher_filter",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "csrftoken=encuIW6MSoJ053GdG90sBOqDiTbR3qgM",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46YWRtaW4=",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/teacher/?format=json&classroom_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"teacher",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								},
+								{
+									"key": "classroom_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add teacher",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "csrftoken=encuIW6MSoJ053GdG90sBOqDiTbR3qgM",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46YWRtaW4=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstname\": \"John\",\n    \"lastname\": \"Smith\",\n    \"gender\": \"M\",\n    \"classroom_ids\": [ 1 ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/teacher/?format=json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"teacher",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit teacher",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "csrftoken=encuIW6MSoJ053GdG90sBOqDiTbR3qgM",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46YWRtaW4=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstname\": \"Sarah\",\n    \"lastname\": \"Davis\",\n    \"gender\": \"F\",\n    \"classroom_ids\": [ 1 ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/teacher/3/?format=json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"teacher",
+								"3",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete teacher",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "csrftoken=encuIW6MSoJ053GdG90sBOqDiTbR3qgM",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46YWRtaW4=",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/teacher/1/?format=json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"teacher",
+								"1",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "students",
+			"item": [
+				{
+					"name": "student_all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "csrftoken=encuIW6MSoJ053GdG90sBOqDiTbR3qgM",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46YWRtaW4=",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/student/?format=json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"student",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student_filter",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "csrftoken=encuIW6MSoJ053GdG90sBOqDiTbR3qgM",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46YWRtaW4=",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/student/?format=json&gender=M",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"student",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								},
+								{
+									"key": "gender",
+									"value": "M"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add student",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "csrftoken=encuIW6MSoJ053GdG90sBOqDiTbR3qgM",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46YWRtaW4=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstname\": \"Alice\",\n    \"lastname\": \"Green\",\n    \"gender\": \"F\",\n    \"classroom_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/student/?format=json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"student",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit student",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "csrftoken=encuIW6MSoJ053GdG90sBOqDiTbR3qgM",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46YWRtaW4=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstname\": \"Ethan\",\n    \"lastname\": \"Scott\",\n    \"gender\": \"M\",\n    \"classroom_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/student/1/?format=json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"1",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete student",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "csrftoken=encuIW6MSoJ053GdG90sBOqDiTbR3qgM",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46YWRtaW4=",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/student/1/?format=json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"student",
+								"1",
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": {
+			"value": "Basic YWRtaW46YWRtaW4=",
+			"key": "Authorization"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
